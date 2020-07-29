@@ -1,7 +1,8 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const wordSearch = require('../wordsearch.js')
+const wordSearch = require('../wordsearch.js');
+const transpose = require('../transpose.js');
 
 describe("#wordSearch()", function() {
   it("should return false if the word is not present", function() {
@@ -29,6 +30,22 @@ describe("#wordSearch()", function() {
       ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
       ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
       ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'SEINFELD')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['A', 'S', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['X', 'E', 'D', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'I', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'N', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'F', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'E', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'L', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
     ], 'SEINFELD')
